@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/globals.css";
-import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BranchLocator from "./pages/BranchLocator";
 import { ToastContainer, Zoom } from "react-toastify";
