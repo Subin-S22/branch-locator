@@ -57,6 +57,7 @@ const states = [
   "Uttarakhand",
   "West Bengal",
 ];
+
 const BranchLocator = () => {
   const [cities, setCities] = useState([]);
   const [branches, setBranches] = useState([]);
@@ -89,9 +90,9 @@ const BranchLocator = () => {
 
   return (
     <Layout name="barnch locator">
-      <div className="flex min-h-screen flex-col items-center justify-center">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gray-300">
         <Navbar />
-        <main className="flex w-full flex-1 flex-col items-center justify-center bg-gray-300 lg:px-20 px-4 md:px-10 text-center">
+        <main className="flex w-full flex-1 flex-col items-center justify-center bg-gray-300 p-4 lg:px-20 px-4 md:px-10 text-center">
           <Formik initialValues={initial} onSubmit={onSubmit}>
             {(props: FormikProps<typeof initial>) => (
               <Form className="bg-white p-16 flex gap-3 flex-col w-[50%] max-w-[500px]">
@@ -156,7 +157,7 @@ const BranchLocator = () => {
           </Formik>
         </main>
         {branches.length !== 0 && (
-          <section>
+          <section className="my-4">
             <EnhancedTable title="Branch" data={branches} />
           </section>
         )}

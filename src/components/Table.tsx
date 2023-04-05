@@ -320,12 +320,8 @@ export default function EnhancedTable({ title, search, data }: Props) {
             <TableBody>
               {/* if you don't need to support IE11, you can replace the `stableSort` call with:
               rows.slice().sort(getComparator(order, orderBy)) */}
-              {stableSort(rows, getComparator(order, orderBy))
-                .slice(
-                  page * rowsPerPage,
-                  search ? page * rowsPerPage + rowsPerPage : 3
-                )
-                .map((row, index) => {
+              {stableSort(rows, getComparator(order, orderBy)).map(
+                (row, index) => {
                   const isItemSelected = isSelected(`${row.branchName}`);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
@@ -352,7 +348,8 @@ export default function EnhancedTable({ title, search, data }: Props) {
                       <TableCell>{row.zipcode}</TableCell>
                     </TableRow>
                   );
-                })}
+                }
+              )}
               {emptyRows > 0 && (
                 <TableRow
                   style={{
